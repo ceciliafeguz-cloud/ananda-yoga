@@ -3,65 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ananda Yoga | Yoga Terapéutico y Clases Online</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ananda Yoga | Yoga Terapéutico e Integral</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Encabezado / Header -->
+    <!-- Encabezado / Navbar -->
     <header class="header">
         <div class="container header-container">
-            <h1 class="logo">Ananda <span>Yoga Terapéutico</span></h1>
+            <div class="logo-container">
+                <!-- Isotipo / Logo de Yoga -->
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e07a5f" stroke-width="3"/>
+                    <path d="M50 20 C35 35, 20 50, 50 80 C80 50, 65 35, 50 20 Z" fill="#81b29a" opacity="0.8"/>
+                    <path d="M30 45 C40 45, 50 55, 50 80 C35 65, 25 55, 30 45 Z" fill="#f4a261" opacity="0.9"/>
+                    <path d="M70 45 C60 45, 50 55, 50 80 C65 65, 75 55, 70 45 Z" fill="#f2cc8f" opacity="0.9"/>
+                    <circle cx="50" cy="32" r="5" fill="#e07a5f"/>
+                </svg>
+                <h1 class="logo">Ananda <span>Yoga Terapéutico</span></h1>
+            </div>
             <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#estilos">Estilos</a>
+                <a href="#clases">Clases & Costos</a>
                 <a href="#ficha">Ficha de Salud</a>
                 <a href="#contacto">Contacto</a>
+                <div class="carrito-icono" id="btn-carrito">
+                    🛒 <span id="carrito-contador">0</span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <!-- Banner Principal -->
+    <section class="hero">
         <div class="container hero-content">
-            <h2>Bienestar integral para tu cuerpo y mente</h2>
-            <p>Clases privadas y personalizadas online enfocadas en tu salud física, postural y emocional.</p>
-            <a href="#ficha" class="btn btn-primary">Completar Ficha de Salud</a>
+            <h2>Bienestar & Salud Holística</h2>
+            <p>Clases privadas y personalizadas online adaptadas a tus necesidades físicas, posturales y emocionales.</p>
+            <a href="#clases" class="btn btn-primary">Ver Planes e Inscribirme</a>
         </div>
     </section>
 
-    <!-- Estilos / Propuesta -->
-    <section id="estilos" class="estilos">
+    <!-- Clases y Precios -->
+    <section id="clases" class="clases-section">
         <div class="container">
-            <h2 class="section-title">Enfoque Terapéutico</h2>
+            <h2 class="section-title">Nuestras Clases Online</h2>
             <div class="cards-grid">
+                
+                <!-- Tarjeta Yoga Terapéutico -->
                 <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga Terapéutico">
+                    </div>
                     <h3>Yoga Terapéutico</h3>
-                    <p>Adaptado a dolencias específicas, lesiones, molestias lumbares y cervicales con cuidado personalizado.</p>
+                    <p>Cuidado personalizado para dolencias lumbares, cervicales, molestias articulares y reeducación postural con elementos.</p>
+                    <div class="precio">$20.000 <span>/ mes</span></div>
+                    <button class="btn btn-agregar" onclick="agregarAlCarrito('Yoga Terapéutico - Pase Mensual', 20000)">Agregar al Carrito</button>
                 </div>
+
+                <!-- Tarjeta Yoga Integral -->
                 <div class="card">
-                    <h3>Yoga con Elementos</h3>
-                    <p>Uso de sillas, bloques, mantas y cintas para facilitar la alineación y accesibilidad de cada postura.</p>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Yoga Integral">
+                    </div>
+                    <h3>Yoga Integral</h3>
+                    <p>Práctica equilibrada que integra respiración consciente (Pranayama), movilidad fluida, relajación y meditación profunda.</p>
+                    <div class="precio">$20.000 <span>/ mes</span></div>
+                    <button class="btn btn-agregar" onclick="agregarAlCarrito('Yoga Integral - Pase Mensual', 20000)">Agregar al Carrito</button>
                 </div>
-                <div class="card">
-                    <h3>Yoga Integral & Flow</h3>
-                    <p>Movimiento fluido coordinado con la respiración para revitalizar el cuerpo y calmar la mente.</p>
-                </div>
-                <div class="card">
-                    <h3>Yoga Facial & Sin Asanas</h3>
-                    <p>Ejercicios de relajación facial, respiración consciente (Pranayama) y meditación guiada.</p>
-                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Ventana flotante del Carrito -->
+    <div id="modal-carrito" class="modal-carrito">
+        <div class="contenido-carrito">
+            <span class="cerrar-modal" id="cerrar-carrito">&times;</span>
+            <h3>Tu Carrito de Inscripción</h3>
+            <div id="lista-carrito">
+                <p>El carrito está vacío.</p>
+            </div>
+            <div class="total-carrito">
+                <strong>Total: $<span id="total-precio">0</span></strong>
+            </div>
+            <button class="btn btn-whatsapp" id="btn-comprar-whatsapp">Confirmar por WhatsApp 💬</button>
+        </div>
+    </div>
 
     <!-- Formulario / Ficha de Salud -->
     <section id="ficha" class="ficha-section">
         <div class="container">
             <div class="form-card">
                 <h2>Ficha de Salud del Alumno</h2>
-                <p class="form-subtitle">Por favor completa tus datos para personalizar tus clases privadas online según tus necesidades físicas.</p>
+                <p class="form-subtitle">Completa tus datos de salud para adaptar tus clases individuales.</p>
 
                 <form id="form-salud">
                     <div class="form-group">
@@ -78,15 +112,15 @@
                         <label for="nivel">Nivel de Experiencia *</label>
                         <select id="nivel" required>
                             <option value="">Selecciona tu nivel...</option>
-                            <option value="Principiante">Principiante (Sin experiencia previa)</option>
-                            <option value="Intermedio">Intermedio (Practicante ocasional)</option>
-                            <option value="Avanzado">Avanzado (Práctica regular)</option>
+                            <option value="Principiante">Principiante (Sin experiencia)</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Avanzado">Avanzado</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="patologias">Patologías, dolores o diagnósticos médicos *</label>
-                        <textarea id="patologias" rows="4" placeholder="Describe aquí si tienes dolor lumbar, hernia de disco, hipertensión, escoliosis, estrés o alguna condición médica a tener en cuenta..." required></textarea>
+                        <label for="patologias">Patologías o diagnósticos médicos *</label>
+                        <textarea id="patologias" rows="4" placeholder="Dolores lumbares, cervicales, hernias, escoliosis, estrés, etc." required></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-submit" id="btn-enviar">Enviar Ficha de Salud</button>
@@ -96,11 +130,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer / Contacto -->
     <footer id="contacto" class="footer">
         <div class="container footer-content">
-            <p><strong>Ananda Yoga Terapéutico</strong> | Clases Privadas Online</p>
-            <p>Formación Profesional Internacional</p>
+            <p><strong>Ananda Yoga Terapéutico & Integral</strong></p>
+            <p>Clases Privadas Online | Formación Internacional</p>
         </div>
     </footer>
 
@@ -108,7 +142,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
-    <!-- TU SCRIPT PRINCIPAL -->
+    <!-- ARCHIVO JS -->
     <script src="script.js"></script>
 </body>
 </html>
