@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ananda Yoga | Cecilia Profe de Yoga</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,15 @@
                 <span class="tagline">Bienvenida a tu espacio online</span>
                 <h2>Hola, soy Cecilia. Te acompaño a habitar tu cuerpo con amor y conciencia.</h2>
                 <p>Inicio este proyecto de yoga online para brindarte clases privadas y personalizadas. Un espacio seguro para aliviar tensiones, mejorar tu postura y reconectar con tu bienestar emocional.</p>
-                <a href="#clases" class="btn btn-primary">Ver Clases Online</a>
+                
+                <!-- Anuncio de Próximos Eventos -->
+                <div style="background-color: var(--rosa-bg); border-left: 4px solid var(--naranja-suave); padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 0.88rem;">
+                    <strong>🌱 Próximos eventos:</strong><br>
+                    • <strong>Septiembre:</strong> 2 Clases Abiertas de prueba (Sin costo).<br>
+                    • <strong>Noviembre:</strong> Inicio oficial del ciclo de clases privadas.
+                </div>
+
+                <a href="#ficha" class="btn btn-primary">Reservar Lugar / Ficha de Salud</a>
             </div>
             <div class="hero-image-wrapper">
                 <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Cecilia Yoga Online" class="hero-img">
@@ -76,7 +84,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Mis Clases Online</h2>
-                <p>Modalidad privada y personalizada para adaptarme a tus necesidades físicas.</p>
+                <p>Modalidad privada y personalizada. Inicio formal de pases mensuales en <strong>Noviembre</strong>.</p>
             </div>
 
             <div class="grid-clases">
@@ -96,13 +104,13 @@
                         </ul>
                         <div class="price-box">
                             <span class="monto">$30.000</span>
-                            <span class="periodo">/ mes</span>
+                            <span class="periodo">/ mes (Inicia Noviembre)</span>
                         </div>
-                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Terapéutico - Pase Mensual', 30000)">Agregar al Carrito</button>
+                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Terapéutico - Pase Mensual (Noviembre)', 30000)">Agregar al Carrito</button>
                     </div>
                 </div>
 
-                <!-- Yoga Integral (Imagen Actualizada) -->
+                <!-- Yoga Integral -->
                 <div class="card-clase">
                     <div class="card-img-container">
                         <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Yoga Integral">
@@ -117,16 +125,15 @@
                         </ul>
                         <div class="price-box">
                             <span class="monto">$30.000</span>
-                            <span class="periodo">/ mes</span>
+                            <span class="periodo">/ mes (Inicia Noviembre)</span>
                         </div>
-                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Integral - Pase Mensual', 30000)">Agregar al Carrito</button>
+                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Integral - Pase Mensual (Noviembre)', 30000)">Agregar al Carrito</button>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-
 
     <!-- Modal del Carrito -->
     <div id="modal-carrito" class="modal">
@@ -149,8 +156,8 @@
         <div class="container">
             <div class="form-wrapper">
                 <div class="form-header">
-                    <h2>Ficha de Salud del Alumno</h2>
-                    <p>Completa tus datos para conocerte y adaptar tus clases online antes de comenzar.</p>
+                    <h2>Ficha de Salud y Pre-inscripción</h2>
+                    <p>Completa tus datos para conocerte. Podés inscribirte a las clases gratuitas de Septiembre o reservar tu cupo para Noviembre.</p>
                 </div>
 
                 <form id="form-salud" class="form">
@@ -162,6 +169,17 @@
                     <div class="input-group">
                         <label for="telefono">WhatsApp / Teléfono *</label>
                         <input type="tel" id="telefono" placeholder="Ej. +54 9 379 1234567" required>
+                    </div>
+
+                    <!-- Nueva Selección: Interés en Septiembre u Noviembre -->
+                    <div class="input-group">
+                        <label for="interes">¿A qué modalidad querés sumarte? *</label>
+                        <select id="interes" required>
+                            <option value="">Selecciona una opción...</option>
+                            <option value="Clases Abiertas Septiembre (Gratis)">Clases Abiertas de Septiembre (Sin Costo)</option>
+                            <option value="Ciclo Regular Noviembre (Pago)">Reserva de Cupo para Noviembre ($30.000/mes)</option>
+                            <option value="Ambas Opciones">Quiero sumarme en Septiembre y continuar en Noviembre</option>
+                        </select>
                     </div>
 
                     <div class="input-group">
@@ -179,7 +197,7 @@
                         <textarea id="patologias" rows="4" placeholder="Cuéntame si tienes dolores de espalda, cervicales, lesiones o estrés..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-submit" id="btn-enviar">Guardar Ficha de Salud</button>
+                    <button type="submit" class="btn btn-submit" id="btn-enviar">Guardar Ficha y Reservar Lugar</button>
                     <div id="mensaje-estado" class="status-msg"></div>
                 </form>
             </div>
