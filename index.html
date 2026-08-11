@@ -1,131 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ananda Yoga | Clases Online</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananda Yoga | Yoga Terapéutico y Clases Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
-  <header class="header">
-    <div class="logo-contenedor">
-      <span class="loto-icon">🪷</span>
-      <div class="logo-texto">
-        <span class="marca-ananda">ANANDA</span> <span class="marca-yoga">YOGA</span>
-      </div>
-    </div>
-    <nav class="nav">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#servicios">Clases</a>
-      <a href="#ficha-salud">Ficha de Salud</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="hero-content">
-      <span class="simbolo-suave">🕉️</span>
-      <h1>Bienvenido a Ananda Yoga</h1>
-      <p class="subtitulo">Espacio holístico de práctica y bienestar 100% online.</p>
-      <a href="#servicios" class="btn btn-naranja">Ver Clases Disponibles</a>
-    </div>
-  </section>
-
-  <!-- SECCIÓN CLASES (CARRITO) -->
-  <section id="servicios" class="seccion servicios">
-    <h2>Selecciona tus Clases Online</h2>
-    
-    <div class="grid-servicios">
-
-      <!-- CLASE 1 -->
-      <article class="tarjeta-servicio">
-        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Yoga Terapéutico">
-        <div class="contenido-tarjeta">
-          <h3>Yoga Terapéutico</h3>
-          <p>Uso de elementos para aliviar dolencias articulares y posturales.</p>
-          <p class="precio"><strong>$20.000 ARS / sesión</strong></p>
-          <button class="btn btn-naranja" onclick="agregarAlCarrito('Yoga Terapéutico', 20000)">Agregar al Carrito</button>
+    <!-- Encabezado / Header -->
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">Ananda <span>Yoga Terapéutico</span></h1>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#estilos">Estilos</a>
+                <a href="#ficha">Ficha de Salud</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
         </div>
-      </article>
+    </header>
 
-      <!-- CLASE 2 -->
-      <article class="tarjeta-servicio">
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Yoga Integral">
-        <div class="contenido-tarjeta">
-          <h3>Yoga Integral</h3>
-          <p>Asanas, pranayama, relajación guiada y meditación.</p>
-          <p class="precio"><strong>$20.000 ARS / sesión</strong></p>
-          <button class="btn btn-naranja" onclick="agregarAlCarrito('Yoga Integral', 20000)">Agregar al Carrito</button>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h2>Bienestar integral para tu cuerpo y mente</h2>
+            <p>Clases privadas y personalizadas online enfocadas en tu salud física, postural y emocional.</p>
+            <a href="#ficha" class="btn btn-primary">Completar Ficha de Salud</a>
         </div>
-      </article>
+    </section>
 
-    </div>
+    <!-- Estilos / Propuesta -->
+    <section id="estilos" class="estilos">
+        <div class="container">
+            <h2 class="section-title">Enfoque Terapéutico</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Yoga Terapéutico</h3>
+                    <p>Adaptado a dolencias específicas, lesiones, molestias lumbares y cervicales con cuidado personalizado.</p>
+                </div>
+                <div class="card">
+                    <h3>Yoga con Elementos</h3>
+                    <p>Uso de sillas, bloques, mantas y cintas para facilitar la alineación y accesibilidad de cada postura.</p>
+                </div>
+                <div class="card">
+                    <h3>Yoga Integral & Flow</h3>
+                    <p>Movimiento fluido coordinado con la respiración para revitalizar el cuerpo y calmar la mente.</p>
+                </div>
+                <div class="card">
+                    <h3>Yoga Facial & Sin Asanas</h3>
+                    <p>Ejercicios de relajación facial, respiración consciente (Pranayama) y meditación guiada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- CAJA DEL CARRITO -->
-    <div class="caja-carrito">
-      <h3>🛒 Tu Reserva de Clases</h3>
-      <ul id="lista-carrito">
-        <!-- Se llena automáticamente -->
-      </ul>
-      <p class="total-texto">Total: $ <span id="total-carrito">0</span></p>
-      <button class="btn btn-whatsapp" onclick="enviarPedidoWhatsApp()">💬 Confirmar Reserva por WhatsApp</button>
-    </div>
-  </section>
+    <!-- Formulario / Ficha de Salud -->
+    <section id="ficha" class="ficha-section">
+        <div class="container">
+            <div class="form-card">
+                <h2>Ficha de Salud del Alumno</h2>
+                <p class="form-subtitle">Por favor completa tus datos para personalizar tus clases privadas online según tus necesidades físicas.</p>
 
-  <!-- SECCIÓN FICHA DE SALUD Y DOLENCIAS -->
-  <section id="ficha-salud" class="seccion ficha-salud">
-    <h2>Ficha de Ingreso y Salud</h2>
-    <p class="subtitulo-seccion">Completa este formulario antes de tu primera clase para adaptar la práctica a tus necesidades.</p>
-    
-    <!-- FORMSPREE: Reemplaza 'TU_FORM_ID' por tu código gratuito de formspree.io -->
-    <form action="https://formspree.io/f/xyegwbvj" method="POST" class="formulario">
-      
-      <div class="campo">
-        <label for="nombre">Nombre Completo:</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Pérez">
-      </div>
+                <form id="form-salud">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido *</label>
+                        <input type="text" id="nombre" placeholder="Ej. María García" required>
+                    </div>
 
-      <div class="campo">
-        <label for="whatsapp">Teléfono / WhatsApp:</label>
-        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+5493794123456">
-      </div>
+                    <div class="form-group">
+                        <label for="telefono">WhatsApp / Teléfono *</label>
+                        <input type="tel" id="telefono" placeholder="Ej. +54 9 379 1234567" required>
+                    </div>
 
-      <div class="campo">
-        <label for="nivel">Experiencia previa en Yoga:</label>
-        <select id="nivel" name="nivel">
-          <option value="Principiante">Principiante (Primera vez)</option>
-          <option value="Intermedio">Intermedio</option>
-          <option value="Avanzado">Avanzado</option>
-        </select>
-      </div>
+                    <div class="form-group">
+                        <label for="nivel">Nivel de Experiencia *</label>
+                        <select id="nivel" required>
+                            <option value="">Selecciona tu nivel...</option>
+                            <option value="Principiante">Principiante (Sin experiencia previa)</option>
+                            <option value="Intermedio">Intermedio (Practicante ocasional)</option>
+                            <option value="Avanzado">Avanzado (Práctica regular)</option>
+                        </select>
+                    </div>
 
-      <div class="campo">
-        <label for="dolencias">Zonas de dolor o patologías (Hernias, escoliosis, hipertensión, etc.):</label>
-        <textarea id="dolencias" name="dolencias" rows="4" placeholder="Cuéntame si sientes dolor en espalda, cuello, rodillas o si posees algún diagnóstico médico..."></textarea>
-      </div>
+                    <div class="form-group">
+                        <label for="patologias">Patologías, dolores o diagnósticos médicos *</label>
+                        <textarea id="patologias" rows="4" placeholder="Describe aquí si tienes dolor lumbar, hernia de disco, hipertensión, escoliosis, estrés o alguna condición médica a tener en cuenta..." required></textarea>
+                    </div>
 
-      <button type="submit" class="btn btn-naranja">Enviar Ficha de Salud</button>
-    </form>
-  </section>
+                    <button type="submit" class="btn btn-submit" id="btn-enviar">Enviar Ficha de Salud</button>
+                    <div id="mensaje-estado" class="mensaje-estado"></div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="footer">
-    <p>🪷 Ananda Yoga — Cecilia Gutiérrez 🪷</p>
-  </footer>
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-content">
+            <p><strong>Ananda Yoga Terapéutico</strong> | Clases Privadas Online</p>
+            <p>Formación Profesional Internacional</p>
+        </div>
+    </footer>
 
-  <!-- VÍNCULO CON EL ARCHIVO JAVASCRIPT -->
-  <script src="script.js"></script>
+    <!-- LIBRERÍAS DE FIREBASE (COMPAT) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
-  <!-- Carga de SDKs de Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-
-<!-- Tu archivo JS -->
-<script src="script.js"></script>
-
+    <!-- ARCHIVO JS -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// Configuración de Firebase con tus claves
+// Configuración de Firebase con tus claves de proyecto
 const firebaseConfig = {
   apiKey: "AIzaSyBc0kjAWGV8gdPK_3HdLWFA5_U-W5PXU5I",
   authDomain: "ananda-yoga-sd.firebaseapp.com",
@@ -9,82 +9,55 @@ const firebaseConfig = {
   measurementId: "G-EFVKREVYDH"
 };
 
-// Inicializar Firebase y Firestore
+// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Función para guardar la Ficha de Salud en la Base de Datos
-const formSalud = document.getElementById("form-salud");
+// Manejo de la Ficha de Salud
+document.addEventListener("DOMContentLoaded", function () {
+  const formSalud = document.getElementById("form-salud");
+  const btnEnviar = document.getElementById("btn-enviar");
+  const mensajeEstado = document.getElementById("mensaje-estado");
 
-if (formSalud) {
-  formSalud.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Evita recargar la página
+  if (formSalud) {
+    formSalud.addEventListener("submit", async function (e) {
+      e.preventDefault(); // Evita que la página se recargue
 
-    // Capturar datos del formulario
-    const datosAlumno = {
-      nombre: document.getElementById("nombre").value,
-      telefono: document.getElementById("telefono").value,
-      nivel: document.getElementById("nivel").value,
-      patologias: document.getElementById("patologias").value,
-      fechaRegistro: new Date().toISOString()
-    };
+      // Deshabilitar botón temporalmente
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = "Guardando Ficha...";
+      mensajeEstado.className = "mensaje-estado";
+      mensajeEstado.style.display = "none";
 
-    try {
-      // Guardar en la colección "fichas_salud" de Firestore
-      await db.collection("fichas_salud").add(datosAlumno);
-      alert("¡Ficha de Salud enviada y guardada con éxito!");
-      formSalud.reset();
-    } catch (error) {
-      console.error("Error al guardar:", error);
-      alert("Ocurrió un error al enviar la ficha. Inténtalo de nuevo.");
-    }
-  });
-}
+      // Capturar los valores del formulario
+      const datosAlumno = {
+        nombre: document.getElementById("nombre").value.trim(),
+        telefono: document.getElementById("telefono").value.trim(),
+        nivel: document.getElementById("nivel").value,
+        patologias: document.getElementById("patologias").value.trim(),
+        fechaRegistro: new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
+      };
 
-// --- CARRITO DE COMPRAS VIA WHATSAPP ---
-let carrito = [];
+      try {
+        // Guardar en la colección 'fichas_salud' de Firestore
+        await db.collection("fichas_salud").add(datosAlumno);
 
-function agregarAlCarrito(nombreClase, precio) {
-  carrito.push({ nombre: nombreClase, precio: precio });
-  actualizarCarritoUI();
-}
+        // Mostrar mensaje de éxito en pantalla
+        mensajeEstado.textContent = "¡Ficha de Salud enviada y guardada con éxito!";
+        mensajeEstado.classList.add("exito");
 
-function actualizarCarritoUI() {
-  const lista = document.getElementById('lista-carrito');
-  const totalElemento = document.getElementById('total-carrito');
-  
-  lista.innerHTML = '';
-  let total = 0;
+        // Limpiar formulario
+        formSalud.reset();
 
-  carrito.forEach((item, index) => {
-    total += item.precio;
-    const li = document.createElement('li');
-    li.textContent = `${item.nombre} - $${item.precio}`;
-    lista.appendChild(li);
-  });
-
-  totalElemento.textContent = total;
-}
-
-function enviarPedidoWhatsApp() {
-  if (carrito.length === 0) {
-    alert('El carrito está vacío. Selecciona alguna clase primero.');
-    return;
+      } catch (error) {
+        console.error("Error al guardar en Firestore:", error);
+        mensajeEstado.textContent = "Ocurrió un error al enviar. Por favor intenta de nuevo.";
+        mensajeEstado.classList.add("error");
+      } finally {
+        // Restablecer botón
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "Enviar Ficha de Salud";
+      }
+    });
   }
-
-  // REEMPLAZA ESTE NÚMERO POR TU WHATSAPP CON CÓDIGO DE PAÍS (Ej: 5493794123456)
-  const numeroTelefono = "5493794123456"; 
-  
-  let mensaje = "Hola Cecilia! Quisiera reservar las siguientes clases online:\n\n";
-  let total = 0;
-
-  carrito.forEach(item => {
-    mensaje += `• ${item.nombre}: $${item.precio}\n`;
-    total += item.precio;
-  });
-
-  mensaje += `\n*Total a abonar:* $${total}`;
-
-  const url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, '_blank');
-}
+});
