@@ -30,7 +30,7 @@ function enviarPedidoWhatsApp() {
   }
 
   // REEMPLAZA ESTE NÚMERO POR TU WHATSAPP CON CÓDIGO DE PAÍS (Ej: 5493794123456)
-  const numeroTelefono = "5490000000000"; 
+  const numeroTelefono = "5493794123456"; 
   
   let mensaje = "Hola Cecilia! Quisiera reservar las siguientes clases online:\n\n";
   let total = 0;
