@@ -453,4 +453,46 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
+    /* Estilos para el cartel de próximas fechas */
+.anuncio-fechas {
+    background-color: #fdf6f4;
+    border: 1px solid #e07a5f;
+    border-left: 5px solid #e07a5f;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.anuncio-titulo {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    color: #e07a5f;
+    font-size: 0.95rem;
+}
+
+.anuncio-lista {
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+    color: #5c6b64;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.anuncio-contacto {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #2b3a33;
+}
+
+.anuncio-wa-link {
+    color: #25d366;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.anuncio-wa-link:hover {
+    text-decoration: underline;
+}
 }

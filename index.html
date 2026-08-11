@@ -1,213 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ananda Yoga | Cecilia Profe de Yoga</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananda Yoga | Cecilia Profe de Yoga</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Navegación Principal -->
-    <header class="header">
-        <div class="container nav-bar">
-            <div class="brand">
-                <span class="brand-title">Ananda Yoga</span>
-                <span class="brand-sub">Por Cecilia</span>
-            </div>
-            <nav class="nav-links">
-                <a href="#beneficios">Beneficios</a>
-                <a href="#clases">Clases</a>
-                <a href="#ficha">Ficha de Salud</a>
-                <button class="cart-btn" id="btn-carrito">
-                    🛒 Carrito (<span id="carrito-contador">0</span>)
-                </button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Portada Principal -->
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <span class="tagline">Bienvenida a tu espacio online</span>
-                <h2>Hola, soy Cecilia. Te acompaño a habitar tu cuerpo con amor y conciencia.</h2>
-                <p>Inicio este proyecto de yoga online para brindarte clases privadas y personalizadas. Un espacio seguro para aliviar tensiones, mejorar tu postura y reconectar con tu bienestar emocional.</p>
-                <a href="#clases" class="btn btn-primary">Ver Clases Online</a>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Cecilia Yoga Online" class="hero-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Beneficios del Yoga -->
-    <section id="beneficios" class="beneficios-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Por qué practicar Yoga?</h2>
-                <p>La práctica constante transforma tu salud integral física, mental y emocional.</p>
-            </div>
-            <div class="grid-beneficios">
-                <div class="card-beneficio">
-                    <div class="icono-ilustracion">🌿</div>
-                    <h3>Alivio Postural</h3>
-                    <p>Reduce dolores de espalda, tensiones en cuello y zona lumbar mediante estiramientos conscientes.</p>
-                </div>
-                <div class="card-beneficio">
-                    <div class="icono-ilustracion">🌸</div>
-                    <h3>Paz Mental</h3>
-                    <p>La respiración te ayuda a disminuir la ansiedad, calmar el sistema nervioso y mejorar la concentración.</p>
-                </div>
-                <div class="card-beneficio">
-                    <div class="icono-ilustracion">☀️</div>
-                    <h3>Movilidad Suave</h3>
-                    <p>Aumenta tu flexibilidad y fuerza muscular a tu propio ritmo y sin forzar las articulaciones.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Clases y Carrito -->
-    <section id="clases" class="clases-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mis Clases Online</h2>
-                <p>Modalidad privada y personalizada para adaptarme a tus necesidades físicas.</p>
-            </div>
-
-            <div class="grid-clases">
-                
-                <!-- Yoga Terapéutico -->
-                <div class="card-clase">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Yoga Terapéutico">
-                    </div>
-                    <div class="card-body">
-                        <h3>Yoga Terapéutico</h3>
-                        <p class="desc-corta">Enfoque suave y adaptado con uso de elementos para cuidar tu cuerpo.</p>
-                        <ul class="lista-beneficios">
-                            <li>✓ Ideal para dolores de espalda, cervicales y hernias.</li>
-                            <li>✓ Mejora alineación postural y flexibilidad suave.</li>
-                            <li>✓ Adaptado a dolencias específicas o lesiones.</li>
-                        </ul>
-                        <div class="price-box">
-                            <span class="monto">$30.000</span>
-                            <span class="periodo">/ mes</span>
-                        </div>
-                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Terapéutico - Pase Mensual', 30000)">Agregar al Carrito</button>
-                    </div>
-                </div>
-
-                <!-- Yoga Integral (Imagen Actualizada) -->
-                <div class="card-clase">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Yoga Integral">
-                    </div>
-                    <div class="card-body">
-                        <h3>Yoga Integral</h3>
-                        <p class="desc-corta">Una práctica completa que equilibra cuerpo, mente y respiración.</p>
-                        <ul class="lista-beneficios">
-                            <li>✓ Movilidad corporal fluida y respiración consciente.</li>
-                            <li>✓ Tonificación muscular suave y equilibrio.</li>
-                            <li>✓ Meditación guiada y relajación profunda.</li>
-                        </ul>
-                        <div class="price-box">
-                            <span class="monto">$30.000</span>
-                            <span class="periodo">/ mes</span>
-                        </div>
-                        <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Integral - Pase Mensual', 30000)">Agregar al Carrito</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Modal del Carrito -->
-    <div id="modal-carrito" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="cerrar-carrito">&times;</span>
-            <h3>Tu Carrito de Inscripción</h3>
-            <div id="lista-carrito" class="cart-items-list">
-                <p class="empty-msg">El carrito está vacío.</p>
-            </div>
-            <div class="cart-total-box">
-                <span>Total:</span>
-                <strong>$<span id="total-precio">0</span></strong>
-            </div>
-            <button class="btn btn-wa" id="btn-comprar-whatsapp">Enviar Pedido por WhatsApp 💬</button>
-        </div>
+  <!-- Navegación Principal -->
+  <header class="header">
+    <div class="container nav-bar">
+      <div class="brand">
+        <span class="brand-title">Ananda Yoga</span>
+        <span class="brand-sub">Por Cecilia</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#clases">Clases</a>
+        <a href="#ficha">Ficha de Salud</a>
+        <button class="cart-btn" id="btn-carrito">
+          🛒 Carrito (<span id="carrito-contador">0</span>)
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Ficha de Salud -->
-    <section id="ficha" class="ficha-section">
-        <div class="container">
-            <div class="form-wrapper">
-                <div class="form-header">
-                    <h2>Ficha de Salud del Alumno</h2>
-                    <p>Completa tus datos para conocerte y adaptar tus clases online antes de comenzar.</p>
-                </div>
+  <!-- Portada Principal -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <span class="tagline">Bienvenida a tu espacio online</span>
+        <h2>Hola, soy Cecilia. Te acompaño a habitar tu cuerpo con amor y conciencia.</h2>
+        <p>Inicio este proyecto de yoga online para brindarte clases privadas y personalizadas. Un espacio seguro para
+          aliviar tensiones, mejorar tu postura y reconectar con tu bienestar emocional.</p>
+        <!-- Cartel Informativo Fechas de Inicio -->
+        <div class="anuncio-fechas">
+          <p class="anuncio-titulo">🌿 Próximas Fechas — Ananda Yoga</p>
+          <ul class="anuncio-lista">
+            <li><strong>Septiembre:</strong> Clases abiertas de prueba (Sin costo).</li>
+            <li><strong>Noviembre:</strong> Inicio oficial de clases regulares.</li>
+          </ul>
+          <p class="anuncio-contacto">
+            💬 Para más información comunicate al WhatsApp:
+            <a href="https://wa.me/5493794691806" target="_blank" class="anuncio-wa-link">+54 9 379 469-1806</a>
+          </p>
+        </div>
 
-                <form id="form-salud" class="form">
-                    <div class="input-group">
-                        <label for="nombre">Nombre y Apellido *</label>
-                        <input type="text" id="nombre" placeholder="Ej. María García" required>
-                    </div>
+        <a href="#clases" class="btn btn-primary">Ver Clases Online</a>
 
-                    <div class="input-group">
-                        <label for="telefono">WhatsApp / Teléfono *</label>
-                        <input type="tel" id="telefono" placeholder="Ej. +54 9 379 1234567" required>
-                    </div>
 
-                    <div class="input-group">
-                        <label for="nivel">Nivel de Experiencia *</label>
-                        <select id="nivel" required>
-                            <option value="">Selecciona tu nivel...</option>
-                            <option value="Principiante">Principiante (Sin experiencia)</option>
-                            <option value="Intermedio">Intermedio</option>
-                            <option value="Avanzado">Avanzado</option>
-                        </select>
-                    </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+          alt="Cecilia Yoga Online" class="hero-img">
+      </div>
+    </div>
+  </section>
 
-                    <div class="input-group">
-                        <label for="patologias">Molestias físicas o diagnósticos médicos *</label>
-                        <textarea id="patologias" rows="4" placeholder="Cuéntame si tienes dolores de espalda, cervicales, lesiones o estrés..." required></textarea>
-                    </div>
+  <!-- Sección Beneficios del Yoga -->
+  <section id="beneficios" class="beneficios-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué practicar Yoga?</h2>
+        <p>La práctica constante transforma tu salud integral física, mental y emocional.</p>
+      </div>
+      <div class="grid-beneficios">
+        <div class="card-beneficio">
+          <div class="icono-ilustracion">🌿</div>
+          <h3>Alivio Postural</h3>
+          <p>Reduce dolores de espalda, tensiones en cuello y zona lumbar mediante estiramientos conscientes.</p>
+        </div>
+        <div class="card-beneficio">
+          <div class="icono-ilustracion">🌸</div>
+          <h3>Paz Mental</h3>
+          <p>La respiración te ayuda a disminuir la ansiedad, calmar el sistema nervioso y mejorar la concentración.</p>
+        </div>
+        <div class="card-beneficio">
+          <div class="icono-ilustracion">☀️</div>
+          <h3>Movilidad Suave</h3>
+          <p>Aumenta tu flexibilidad y fuerza muscular a tu propio ritmo y sin forzar las articulaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <button type="submit" class="btn btn-submit" id="btn-enviar">Guardar Ficha de Salud</button>
-                    <div id="mensaje-estado" class="status-msg"></div>
-                </form>
+  <!-- Sección Clases y Carrito -->
+  <section id="clases" class="clases-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Mis Clases Online</h2>
+        <p>Modalidad privada y personalizada para adaptarme a tus necesidades físicas.</p>
+      </div>
+
+      <div class="grid-clases">
+
+        <!-- Yoga Terapéutico -->
+        <div class="card-clase">
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
+              alt="Yoga Terapéutico">
+          </div>
+          <div class="card-body">
+            <h3>Yoga Terapéutico</h3>
+            <p class="desc-corta">Enfoque suave y adaptado con uso de elementos para cuidar tu cuerpo.</p>
+            <ul class="lista-beneficios">
+              <li>✓ Ideal para dolores de espalda, cervicales y hernias.</li>
+              <li>✓ Mejora alineación postural y flexibilidad suave.</li>
+              <li>✓ Adaptado a dolencias específicas o lesiones.</li>
+            </ul>
+            <div class="price-box">
+              <span class="monto">$30.000</span>
+              <span class="periodo">/ mes</span>
             </div>
+            <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Terapéutico - Pase Mensual', 30000)">Agregar al
+              Carrito</button>
+          </div>
         </div>
-    </section>
 
-    <!-- Frase Budista e Información Final -->
-    <section class="frase-section">
-        <div class="container text-center">
-            <span class="ilustracion-flor">🪷</span>
-            <blockquote class="frase-budista">
-                "La paz viene de adentro. No la busques afuera."
-            </blockquote>
-            <p class="frase-autor">— Buda</p>
+        <!-- Yoga Integral (Imagen Actualizada) -->
+        <div class="card-clase">
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80"
+              alt="Yoga Integral">
+          </div>
+          <div class="card-body">
+            <h3>Yoga Integral</h3>
+            <p class="desc-corta">Una práctica completa que equilibra cuerpo, mente y respiración.</p>
+            <ul class="lista-beneficios">
+              <li>✓ Movilidad corporal fluida y respiración consciente.</li>
+              <li>✓ Tonificación muscular suave y equilibrio.</li>
+              <li>✓ Meditación guiada y relajación profunda.</li>
+            </ul>
+            <div class="price-box">
+              <span class="monto">$30.000</span>
+              <span class="periodo">/ mes</span>
+            </div>
+            <button class="btn btn-card" onclick="agregarAlCarrito('Yoga Integral - Pase Mensual', 30000)">Agregar al
+              Carrito</button>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer / Contacto -->
-    <footer class="footer">
-        <div class="container footer-box">
-            <p class="footer-title">Ananda Yoga — Por Cecilia</p>
-            <p class="footer-sub">Clases Privadas Online | Contacto Directo WhatsApp: +54 9 379 469-1806</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Modal del Carrito -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="cerrar-carrito">&times;</span>
+      <h3>Tu Carrito de Inscripción</h3>
+      <div id="lista-carrito" class="cart-items-list">
+        <p class="empty-msg">El carrito está vacío.</p>
+      </div>
+      <div class="cart-total-box">
+        <span>Total:</span>
+        <strong>$<span id="total-precio">0</span></strong>
+      </div>
+      <button class="btn btn-wa" id="btn-comprar-whatsapp">Enviar Pedido por WhatsApp 💬</button>
+    </div>
+  </div>
+
+  <!-- Ficha de Salud -->
+  <section id="ficha" class="ficha-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-header">
+          <h2>Ficha de Salud del Alumno</h2>
+          <p>Completa tus datos para conocerte y adaptar tus clases online antes de comenzar.</p>
         </div>
-    </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-    <script src="script.js"></script>
+        <form id="form-salud" class="form">
+          <div class="input-group">
+            <label for="nombre">Nombre y Apellido *</label>
+            <input type="text" id="nombre" placeholder="Ej. María García" required>
+          </div>
+
+          <div class="input-group">
+            <label for="telefono">WhatsApp / Teléfono *</label>
+            <input type="tel" id="telefono" placeholder="Ej. +54 9 379 1234567" required>
+          </div>
+
+          <div class="input-group">
+            <label for="nivel">Nivel de Experiencia *</label>
+            <select id="nivel" required>
+              <option value="">Selecciona tu nivel...</option>
+              <option value="Principiante">Principiante (Sin experiencia)</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="patologias">Molestias físicas o diagnósticos médicos *</label>
+            <textarea id="patologias" rows="4"
+              placeholder="Cuéntame si tienes dolores de espalda, cervicales, lesiones o estrés..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-submit" id="btn-enviar">Guardar Ficha de Salud</button>
+          <div id="mensaje-estado" class="status-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frase Budista e Información Final -->
+  <section class="frase-section">
+    <div class="container text-center">
+      <span class="ilustracion-flor">🪷</span>
+      <blockquote class="frase-budista">
+        "La paz viene de adentro. No la busques afuera."
+      </blockquote>
+      <p class="frase-autor">— Buda</p>
+    </div>
+  </section>
+
+  <!-- Footer / Contacto -->
+  <footer class="footer">
+    <div class="container footer-box">
+      <p class="footer-title">Ananda Yoga — Por Cecilia</p>
+      <p class="footer-sub">Clases Privadas Online | Contacto Directo WhatsApp: +54 9 379 469-1806</p>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
