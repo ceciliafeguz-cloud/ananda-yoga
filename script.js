@@ -89,13 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
       btnEnviar.textContent = "Guardando...";
 
       const datos = {
-  nombre: document.getElementById("nombre").value.trim(),
-  telefono: document.getElementById("telefono").value.trim(),
-  interes: document.getElementById("interes").value, // Captura la elección de clases gratuitas o ciclo pago
-  nivel: document.getElementById("nivel").value,
-  patologias: document.getElementById("patologias").value.trim(),
-  fecha: new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
-};
+        nombre: document.getElementById("nombre").value.trim(),
+        telefono: document.getElementById("telefono").value.trim(),
+        nivel: document.getElementById("nivel").value,
+        patologias: document.getElementById("patologias").value.trim(),
+        fecha: new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
+      };
 
       try {
         await db.collection("fichas_salud").add(datos);
