@@ -1,4 +1,4 @@
-// Configuración de Firebase
+// Configuración Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBc0kjAWGV8gdPK_3HdLWFA5_U-W5PXU5I",
   authDomain: "ananda-yoga-sd.firebaseapp.com",
@@ -12,25 +12,25 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Lógica del Carrito
+// Carrito de compras
 let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
   carrito.push({ nombre, precio });
-  actualizarCarritoUI();
-  alert(`¡Agregaste ${nombre} al carrito!`);
+  actualizarUI();
+  alert(`¡Agregaste ${nombre} a tu carrito!`);
 }
 
-function actualizarCarritoUI() {
+function actualizarUI() {
   const contador = document.getElementById("carrito-contador");
   const lista = document.getElementById("lista-carrito");
-  const totalElem = document.getElementById("total-precio");
+  const totalText = document.getElementById("total-precio");
 
   contador.textContent = carrito.length;
 
   if (carrito.length === 0) {
-    lista.innerHTML = "<p>El carrito está vacío.</p>";
-    totalElem.textContent = "0";
+    lista.innerHTML = '<p class="empty-msg">El carrito está vacío.</p>';
+    totalText.textContent = "0";
     return;
   }
 
@@ -40,23 +40,20 @@ function actualizarCarritoUI() {
   carrito.forEach(item => {
     total += item.precio;
     lista.innerHTML += `
-      <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.9rem;">
         <span>${item.nombre}</span>
         <strong>$${item.precio.toLocaleString("es-AR")}</strong>
       </div>
     `;
   });
 
-  totalElem.textContent = total.toLocaleString("es-AR");
+  totalText.textContent = total.toLocaleString("es-AR");
 }
 
-// Modal Carrito
-const modalCarrito = document.getElementById("modal-carrito");
-const btnCarrito = document.getElementById("btn-carrito");
-const cerrarCarrito = document.getElementById("cerrar-carrito");
-
-btnCarrito.onclick = () => modalCarrito.style.display = "flex";
-cerrarCarrito.onclick = () => modalCarrito.style.display = "none";
+// Abrir / Cerrar Modal
+const modal = document.getElementById("modal-carrito");
+document.getElementById("btn-carrito").onclick = () => modal.style.display = "flex";
+document.getElementById("cerrar-carrito").onclick = () => modal.style.display = "none";
 
 // Enviar a WhatsApp
 document.getElementById("btn-comprar-whatsapp").onclick = () => {
@@ -65,52 +62,51 @@ document.getElementById("btn-comprar-whatsapp").onclick = () => {
     return;
   }
 
-  let mensaje = "¡Hola Cecilia! Quiero inscribirme a las siguientes clases online:\n\n";
+  let texto = "¡Hola Cecilia! Quiero consultar e inscribirme a:\n\n";
   let total = 0;
 
   carrito.forEach(item => {
-    mensaje += `• ${item.nombre}: $${item.precio.toLocaleString("es-AR")}\n`;
+    texto += `• ${item.nombre}: $${item.precio.toLocaleString("es-AR")}\n`;
     total += item.precio;
   });
 
-  mensaje += `\n*Total a abonar:* $${total.toLocaleString("es-AR")}`;
+  texto += `\n*Total:* $${total.toLocaleString("es-AR")}`;
 
-  const url = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
+  window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, "_blank");
 };
 
-// Guardar en Firestore
+// Guardar Ficha en Firestore
 document.addEventListener("DOMContentLoaded", function () {
-  const formSalud = document.getElementById("form-salud");
+  const form = document.getElementById("form-salud");
   const btnEnviar = document.getElementById("btn-enviar");
   const mensajeEstado = document.getElementById("mensaje-estado");
 
-  if (formSalud) {
-    formSalud.addEventListener("submit", async function (e) {
+  if (form) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       btnEnviar.disabled = true;
       btnEnviar.textContent = "Guardando...";
 
-      const datosAlumno = {
+      const datos = {
         nombre: document.getElementById("nombre").value.trim(),
         telefono: document.getElementById("telefono").value.trim(),
         nivel: document.getElementById("nivel").value,
         patologias: document.getElementById("patologias").value.trim(),
-        fechaRegistro: new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
+        fecha: new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/Buenos_Aires" })
       };
 
       try {
-        await db.collection("fichas_salud").add(datosAlumno);
-        mensajeEstado.textContent = "¡Ficha de Salud enviada con éxito!";
-        mensajeEstado.className = "mensaje-estado exito";
-        formSalud.reset();
-      } catch (error) {
-        console.error("Error al guardar:", error);
+        await db.collection("fichas_salud").add(datos);
+        mensajeEstado.textContent = "¡Ficha de Salud guardada con éxito!";
+        mensajeEstado.className = "status-msg exito";
+        form.reset();
+      } catch (err) {
+        console.error(err);
         alert("Ocurrió un error al guardar la ficha.");
       } finally {
         btnEnviar.disabled = false;
-        btnEnviar.textContent = "Enviar Ficha de Salud";
+        btnEnviar.textContent = "Guardar Ficha de Salud";
       }
     });
   }
