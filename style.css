@@ -1,254 +1,264 @@
+/* PALETA DE COLORES Y VARIABLES */
 :root {
-    --color-primary: #d87d56;
-    --color-primary-dark: #b8603b;
-    --color-secondary: #6b8e23;
-    --color-bg-light: #faf7f2;
-    --color-card-bg: #ffffff;
-    --color-text: #4a4a4a;
-    --color-heading: #2c3e50;
-    --font-main: 'Poppins', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  --verde-botanico: #3e6b48;
+  --verde-suave: #e8f0e9;
+  --naranja-vital: #e07a5f;
+  --naranja-suave: #fdf0ed;
+  --rosa-armonia: #d88195;
+  --rosa-suave: #fcf0f3;
+  --fondo-cálido: #fdfbf7;
+  --blanco: #ffffff;
+  --texto-oscuro: #2b3a2e;
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--color-bg-light);
-    color: var(--color-text);
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo-cálido);
+  color: var(--texto-oscuro);
+  line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Header */
+/* ENCABEZADO Y LOGO */
 .header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: var(--blanco);
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(62, 107, 72, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--rosa-suave);
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo {
-    font-size: 1.4rem;
-    color: var(--color-heading);
+.loto-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(216, 129, 149, 0.3));
 }
 
-.logo span {
-    font-size: 0.9rem;
-    color: var(--color-primary);
-    display: block;
-    font-weight: 400;
+.logo-texto {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.marca-ananda {
+  color: var(--naranja-vital);
+}
+
+.marca-yoga {
+  color: var(--verde-botanico);
 }
 
 .nav a {
-    text-decoration: none;
-    color: var(--color-text);
-    margin-left: 20px;
-    font-size: 0.95rem;
-    transition: color 0.3s;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: var(--texto-oscuro);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
-    color: var(--color-primary);
+  color: var(--rosa-armonia);
 }
 
-/* Hero */
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(216, 125, 86, 0.1), rgba(216, 125, 86, 0.05));
-    padding: 60px 0;
-    text-align: center;
+  background: linear-gradient(135deg, #3e6b48 0%, #5b8c66 50%, #d88195 100%);
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
 }
 
-.hero h2 {
-    color: var(--color-heading);
-    font-size: 2rem;
-    margin-bottom: 15px;
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
 }
 
-.hero p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 25px;
+.subtitulo {
+  font-size: 1.15rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
 }
 
-/* Botones */
+.simbolo-suave {
+  font-size: 2.2rem;
+  display: block;
+}
+
+/* BOTONES */
 .btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.btn-primary {
-    background-color: var(--color-primary);
-    color: white;
+.btn-naranja {
+  background-color: var(--naranja-vital);
+  color: white;
 }
 
-.btn-primary:hover {
-    background-color: var(--color-primary-dark);
+.btn-naranja:hover {
+  background-color: #cb654b;
+  transform: translateY(-2px);
 }
 
-.btn-submit {
-    background-color: var(--color-primary);
-    color: white;
-    width: 100%;
-    font-size: 1rem;
-    margin-top: 10px;
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  width: 100%;
 }
 
-.btn-submit:hover {
-    background-color: var(--color-primary-dark);
+.btn-whatsapp:hover {
+  background-color: #1ebd56;
 }
 
-/* Estilos Terapéuticos */
-.estilos {
-    padding: 50px 0;
+/* SECCIONES Y TARJETAS */
+.seccion {
+  padding: 3.5rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.section-title {
-    text-align: center;
-    color: var(--color-heading);
-    margin-bottom: 30px;
-    font-size: 1.6rem;
+.seccion h2 {
+  text-align: center;
+  color: var(--verde-botanico);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.subtitulo-seccion {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
 }
 
-.card {
-    background: var(--color-card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border-top: 4px solid var(--color-primary);
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-.card h3 {
-    color: var(--color-heading);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+.tarjeta-servicio {
+  background-color: var(--blanco);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
 }
 
-.card p {
-    font-size: 0.9rem;
+.tarjeta-servicio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* Formulario */
-.ficha-section {
-    padding: 50px 0;
+.contenido-tarjeta {
+  padding: 1.5rem;
 }
 
-.form-card {
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    max-width: 650px;
-    margin: 0 auto;
+.precio {
+  font-size: 1.1rem;
+  color: var(--verde-botanico);
+  margin: 1rem 0;
 }
 
-.form-card h2 {
-    color: var(--color-heading);
-    text-align: center;
-    margin-bottom: 8px;
+/* ESTILOS DEL CARRITO */
+.caja-carrito {
+  background: var(--blanco);
+  border: 2px solid var(--verde-suave);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.form-subtitle {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-    color: #666;
+.caja-carrito h3 {
+  margin-top: 0;
+  color: var(--verde-botanico);
 }
 
-.form-group {
-    margin-bottom: 20px;
+.caja-carrito ul {
+  list-style: none;
+  padding: 0;
 }
 
-.form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
-    color: var(--color-heading);
+.caja-carrito li {
+  padding: 0.5rem 0;
+  border-bottom: 1px border-dashed #eee;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.3s;
+.total-texto {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  color: var(--naranja-vital);
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--color-primary);
+/* ESTILOS DEL FORMULARIO DE SALUD */
+.formulario {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--rosa-armonia);
 }
 
-.mensaje-estado {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 10px;
-    border-radius: 6px;
-    display: none;
+.campo {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.mensaje-estado.exito {
-    display: block;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #a5d6a7;
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--verde-botanico);
 }
 
-.mensaje-estado.error {
-    display: block;
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #ef9a9a;
+.campo input, .campo select, .campo textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
 }
 
-/* Footer */
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  outline: none;
+  border-color: var(--naranja-vital);
+}
+
+/* FOOTER */
 .footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 25px 0;
-    font-size: 0.85rem;
-    margin-top: 40px;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--verde-botanico);
+  color: white;
+  margin-top: 3rem;
 }
 
-.footer p {
-    opacity: 0.9;
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }
