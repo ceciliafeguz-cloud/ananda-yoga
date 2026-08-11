@@ -1,4 +1,4 @@
-// Configuración de Firebase con tus claves de proyecto
+// Configuración de Firebase con tus claves
 const firebaseConfig = {
   apiKey: "AIzaSyBc0kjAWGV8gdPK_3HdLWFA5_U-W5PXU5I",
   authDomain: "ananda-yoga-sd.firebaseapp.com",
@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Manejo de la Ficha de Salud
+// Guardar datos al enviar el formulario
 document.addEventListener("DOMContentLoaded", function () {
   const formSalud = document.getElementById("form-salud");
   const btnEnviar = document.getElementById("btn-enviar");
@@ -21,15 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (formSalud) {
     formSalud.addEventListener("submit", async function (e) {
-      e.preventDefault(); // Evita que la página se recargue
+      e.preventDefault();
 
-      // Deshabilitar botón temporalmente
       btnEnviar.disabled = true;
       btnEnviar.textContent = "Guardando Ficha...";
       mensajeEstado.className = "mensaje-estado";
       mensajeEstado.style.display = "none";
 
-      // Capturar los valores del formulario
       const datosAlumno = {
         nombre: document.getElementById("nombre").value.trim(),
         telefono: document.getElementById("telefono").value.trim(),
@@ -39,14 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       try {
-        // Guardar en la colección 'fichas_salud' de Firestore
         await db.collection("fichas_salud").add(datosAlumno);
 
-        // Mostrar mensaje de éxito en pantalla
         mensajeEstado.textContent = "¡Ficha de Salud enviada y guardada con éxito!";
         mensajeEstado.classList.add("exito");
-
-        // Limpiar formulario
         formSalud.reset();
 
       } catch (error) {
@@ -54,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         mensajeEstado.textContent = "Ocurrió un error al enviar. Por favor intenta de nuevo.";
         mensajeEstado.classList.add("error");
       } finally {
-        // Restablecer botón
         btnEnviar.disabled = false;
         btnEnviar.textContent = "Enviar Ficha de Salud";
       }
