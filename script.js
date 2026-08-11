@@ -1,4 +1,4 @@
-// Configuración Firebase
+// Configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBc0kjAWGV8gdPK_3HdLWFA5_U-W5PXU5I",
   authDomain: "ananda-yoga-sd.firebaseapp.com",
@@ -12,7 +12,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Carrito de compras
+// Carrito
 let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
@@ -50,19 +50,19 @@ function actualizarUI() {
   totalText.textContent = total.toLocaleString("es-AR");
 }
 
-// Abrir / Cerrar Modal
+// Modal Carrito
 const modal = document.getElementById("modal-carrito");
 document.getElementById("btn-carrito").onclick = () => modal.style.display = "flex";
 document.getElementById("cerrar-carrito").onclick = () => modal.style.display = "none";
 
-// Enviar a WhatsApp
+// Enviar a WhatsApp Cecilia (3794691806)
 document.getElementById("btn-comprar-whatsapp").onclick = () => {
   if (carrito.length === 0) {
     alert("Tu carrito está vacío.");
     return;
   }
 
-  let texto = "¡Hola Cecilia! Quiero consultar e inscribirme a:\n\n";
+  let texto = "Hola Cecilia, quiero inscribirme a las siguientes clases online:\n\n";
   let total = 0;
 
   carrito.forEach(item => {
@@ -70,12 +70,12 @@ document.getElementById("btn-comprar-whatsapp").onclick = () => {
     total += item.precio;
   });
 
-  texto += `\n*Total:* $${total.toLocaleString("es-AR")}`;
+  texto += `\n*Total a abonar:* $${total.toLocaleString("es-AR")}`;
 
-  window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, "_blank");
+  window.open(`https://wa.me/5493794691806?text=${encodeURIComponent(texto)}`, "_blank");
 };
 
-// Guardar Ficha en Firestore
+// Guardar Ficha en Firebase Firestore
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form-salud");
   const btnEnviar = document.getElementById("btn-enviar");
@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         await db.collection("fichas_salud").add(datos);
-        mensajeEstado.textContent = "¡Ficha de Salud guardada con éxito!";
+        mensajeEstado.textContent = "¡Ficha de Salud enviada con éxito!";
         mensajeEstado.className = "status-msg exito";
         form.reset();
       } catch (err) {
-        console.error(err);
+        console.error("Error al guardar en Firebase:", err);
         alert("Ocurrió un error al guardar la ficha.");
       } finally {
         btnEnviar.disabled = false;

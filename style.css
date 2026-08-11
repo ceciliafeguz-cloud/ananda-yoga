@@ -1,14 +1,14 @@
-/* Paleta Holística Soft */
 :root {
-    --verde-sabio: #88a096;
-    --rosa-cuarzo: #e8c8c1;
-    --rosa-suave: #fbf5f3;
-    --terracota: #d97a63;
-    --terracota-dark: #b85e49;
-    --texto-oscuro: #2c3531;
-    --texto-suave: #5c6561;
+    --verde-suave: #8aa899;
+    --verde-hover: #739182;
+    --rosa-cuarzo: #f4dcd6;
+    --rosa-bg: #fdf6f4;
+    --naranja-suave: #e07a5f;
+    --naranja-hover: #c86348;
+    --texto-oscuro: #2b3a33;
+    --texto-suave: #5c6b64;
     --blanco: #ffffff;
-    --bg-global: #faf7f5;
+    --bg-pagina: #faf8f5;
     
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Poppins', sans-serif;
@@ -22,22 +22,26 @@
 
 body {
     font-family: var(--font-sans);
-    background-color: var(--bg-global);
+    background-color: var(--bg-pagina);
     color: var(--texto-oscuro);
     line-height: 1.6;
 }
 
 .container {
     width: 90%;
-    max-width: 1050px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Header */
+.text-center {
+    text-align: center;
+}
+
+/* Header Navbar */
 .header {
     background-color: var(--blanco);
-    border-bottom: 1px solid rgba(136, 160, 150, 0.15);
-    padding: 18px 0;
+    border-bottom: 2px solid var(--rosa-cuarzo);
+    padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -58,13 +62,12 @@ body {
     font-family: var(--font-serif);
     font-size: 1.6rem;
     color: var(--texto-oscuro);
-    letter-spacing: 1px;
     line-height: 1;
 }
 
 .brand-sub {
     font-size: 0.75rem;
-    color: var(--terracota);
+    color: var(--naranja-suave);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 3px;
@@ -73,36 +76,32 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--texto-suave);
     font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--terracota);
+    font-weight: 500;
 }
 
 .cart-btn {
-    background-color: var(--rosa-suave);
-    border: 1px solid var(--rosa-cuarzo);
-    color: var(--terracota);
-    padding: 6px 16px;
+    background-color: var(--rosa-bg);
+    border: 1px solid var(--naranja-suave);
+    color: var(--naranja-suave);
+    padding: 7px 16px;
     border-radius: 20px;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Hero Section */
 .hero {
-    padding: 70px 0;
-    background: linear-gradient(180deg, var(--blanco) 0%, var(--bg-global) 100%);
+    padding: 60px 0;
+    background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
 }
 
 .hero-container {
@@ -116,101 +115,122 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 2px;
-    color: var(--verde-sabio);
-    font-weight: 500;
+    color: var(--verde-suave);
+    font-weight: 600;
     display: block;
     margin-bottom: 10px;
 }
 
 .hero-text h2 {
     font-family: var(--font-serif);
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 18px;
-    color: var(--texto-oscuro);
+    margin-bottom: 15px;
 }
 
 .hero-text p {
     color: var(--texto-suave);
-    margin-bottom: 28px;
+    margin-bottom: 25px;
     font-size: 0.95rem;
 }
 
 .hero-img {
     width: 100%;
-    height: 380px;
+    height: 360px;
     object-fit: cover;
     border-radius: 180px 180px 20px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 4px solid var(--rosa-cuarzo);
 }
 
-/* Botones general */
+/* Botones */
 .btn {
     display: inline-block;
     padding: 12px 28px;
     border-radius: 30px;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .btn-primary {
-    background-color: var(--terracota);
+    background-color: var(--naranja-suave);
     color: var(--blanco);
 }
 
 .btn-primary:hover {
-    background-color: var(--terracota-dark);
+    background-color: var(--naranja-hover);
 }
 
-/* Clases Section */
-.clases-section {
-    padding: 80px 0;
+/* Beneficios */
+.beneficios-section {
+    padding: 70px 0;
 }
 
 .section-header {
     text-align: center;
     max-width: 500px;
-    margin: 0 auto 50px;
+    margin: 0 auto 40px;
 }
 
 .section-header h2 {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 400;
     margin-bottom: 8px;
 }
 
-.section-header p {
-    color: var(--texto-suave);
-    font-size: 0.9rem;
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card-beneficio {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    border-top: 4px solid var(--verde-suave);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.icono-ilustracion {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.card-beneficio h3 {
+    font-family: var(--font-serif);
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* Clases Section */
+.clases-section {
+    padding: 70px 0;
+    background-color: var(--rosa-bg);
 }
 
 .grid-clases {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    gap: 30px;
 }
 
 .card-clase {
     background: var(--blanco);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: transform 0.3s;
-}
-
-.card-clase:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    border: 1px solid var(--rosa-cuarzo);
 }
 
 .card-img-container {
     height: 200px;
-    width: 100%;
 }
 
 .card-img-container img {
@@ -221,45 +241,52 @@ body {
 
 .card-body {
     padding: 25px;
-    text-align: center;
 }
 
 .card-body h3 {
     font-family: var(--font-serif);
     font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.card-body p {
+.desc-corta {
+    font-size: 0.9rem;
     color: var(--texto-suave);
-    font-size: 0.88rem;
+    margin-bottom: 15px;
+}
+
+.lista-beneficios {
+    list-style: none;
     margin-bottom: 20px;
+}
+
+.lista-beneficios li {
+    font-size: 0.85rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 6px;
 }
 
 .price-box {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
 .monto {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-family: var(--font-serif);
-    color: var(--terracota);
-}
-
-.periodo {
-    font-size: 0.85rem;
-    color: var(--texto-suave);
+    color: var(--naranja-suave);
+    font-weight: 600;
 }
 
 .btn-card {
-    background-color: var(--verde-sabio);
+    background-color: var(--verde-suave);
     color: var(--blanco);
     width: 100%;
 }
 
 .btn-card:hover {
-    background-color: #758d83;
+    background-color: var(--verde-hover);
 }
 
 /* Modal Carrito */
@@ -267,8 +294,8 @@ body {
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(44, 53, 49, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -276,36 +303,24 @@ body {
 
 .modal-content {
     background: var(--blanco);
-    padding: 35px;
+    padding: 30px;
     border-radius: 16px;
     width: 90%;
-    max-width: 420px;
+    max-width: 400px;
     position: relative;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .close-btn {
     position: absolute;
-    top: 15px; right: 20px;
+    top: 12px; right: 18px;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--texto-suave);
-}
-
-.modal-content h3 {
-    font-family: var(--font-serif);
-    margin-bottom: 20px;
 }
 
 .cart-items-list {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
+    margin: 20px 0;
+    border-bottom: 1px solid #eee;
     padding-bottom: 15px;
-}
-
-.empty-msg {
-    font-size: 0.9rem;
-    color: var(--texto-suave);
 }
 
 .cart-total-box {
@@ -321,67 +336,53 @@ body {
     width: 100%;
 }
 
-/* Formulario Ficha */
+/* Ficha de Salud */
 .ficha-section {
-    padding: 80px 0;
-    background-color: var(--rosa-suave);
+    padding: 70px 0;
 }
 
 .form-wrapper {
     background: var(--blanco);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
-    max-width: 620px;
+    max-width: 600px;
     margin: 0 auto;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+    border: 1px solid var(--rosa-cuarzo);
 }
 
 .form-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .form-header h2 {
     font-family: var(--font-serif);
     font-size: 1.8rem;
-    margin-bottom: 5px;
-}
-
-.form-header p {
-    font-size: 0.88rem;
-    color: var(--texto-suave);
+    font-weight: 400;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .input-group label {
     display: block;
     font-size: 0.85rem;
-    margin-bottom: 6px;
-    color: var(--texto-oscuro);
+    margin-bottom: 5px;
     font-weight: 500;
 }
 
 .input-group input, .input-group select, .input-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e2e8e5;
+    padding: 11px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
     font-size: 0.9rem;
-    outline: none;
-    background-color: #fafbfc;
-}
-
-.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
-    border-color: var(--verde-sabio);
-    background-color: var(--blanco);
 }
 
 .btn-submit {
-    background-color: var(--terracota);
+    background-color: var(--naranja-suave);
     color: white;
     width: 100%;
 }
@@ -401,33 +402,55 @@ body {
     color: #2c5e47;
 }
 
+/* Frase Budista */
+.frase-section {
+    padding: 60px 0;
+    background-color: var(--rosa-bg);
+}
+
+.ilustracion-flor {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.frase-budista {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--texto-oscuro);
+    max-width: 600px;
+    margin: 0 auto 10px;
+}
+
+.frase-autor {
+    font-size: 0.9rem;
+    color: var(--naranja-suave);
+    font-weight: 500;
+}
+
 /* Footer */
 .footer {
     background-color: var(--texto-oscuro);
-    color: var(--blanco);
+    color: white;
     text-align: center;
-    padding: 35px 0;
+    padding: 30px 0;
 }
 
 .footer-title {
     font-family: var(--font-serif);
     font-size: 1.1rem;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .footer-sub {
     font-size: 0.8rem;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* Adaptación Celulares */
 @media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-    .hero-img {
-        height: 280px;
-        border-radius: 100px 100px 20px 20px;
     }
 }
