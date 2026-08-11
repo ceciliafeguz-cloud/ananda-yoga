@@ -71,94 +71,41 @@ body {
   color: var(--rosa-armonia);
 }
 
-/* SECCIÓN HERO (PORTADA) */
+/* HERO */
 .hero {
   background: linear-gradient(135deg, #3e6b48 0%, #5b8c66 50%, #d88195 100%);
   color: white;
   padding: 4rem 1.5rem;
   text-align: center;
-  position: relative;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.subtitulo {
+  font-size: 1.15rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
 }
 
 .simbolo-suave {
   font-size: 2.2rem;
   display: block;
-  margin-bottom: 0.5rem;
-  opacity: 0.85;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-.subtitulo {
-  font-size: 1.15rem;
-  font-style: italic;
-  opacity: 0.95;
-  margin-bottom: 2rem;
-}
-
-.beneficios-generales {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem 0;
-  text-align: left;
-  backdrop-filter: blur(8px);
-}
-
-.beneficios-generales h2 {
-  font-size: 1.35rem;
-  margin-top: 0;
-  text-align: center;
-  color: #fff;
-}
-
-.lista-beneficios-generales {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.lista-beneficios-generales li {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.icono-lista {
-  font-size: 1.2rem;
-}
-
-/* DIVISOR ARMÓNICO */
-.divisor-simbolo {
-  text-align: center;
-  font-size: 1.3rem;
-  letter-spacing: 15px;
-  padding: 1.5rem 0;
-  background-color: var(--fondo-cálido);
-  opacity: 0.7;
 }
 
 /* BOTONES */
 .btn {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
+  padding: 0.8rem 1.8rem;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 700;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-size: 0.95rem;
 }
 
 .btn-naranja {
@@ -174,18 +121,17 @@ body {
 .btn-whatsapp {
   background-color: #25d366;
   color: white;
-  font-size: 1.1rem;
+  width: 100%;
 }
 
 .btn-whatsapp:hover {
   background-color: #1ebd56;
-  transform: translateY(-2px);
 }
 
 /* SECCIONES Y TARJETAS */
 .seccion {
   padding: 3.5rem 1.5rem;
-  max-width: 950px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -193,41 +139,20 @@ body {
   text-align: center;
   color: var(--verde-botanico);
   font-size: 2rem;
-  margin-bottom: 2.5rem;
-  position: relative;
+  margin-bottom: 0.5rem;
 }
 
-.seccion h2::after {
-  content: '🪷';
-  display: block;
-  font-size: 1rem;
-  margin-top: 5px;
+.subtitulo-seccion {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
 }
 
-.tarjeta-sobre-mi {
-  background: var(--blanco);
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(62, 107, 72, 0.05);
-  border-left: 5px solid var(--rosa-armonia);
-  position: relative;
-  overflow: hidden;
-}
-
-.icono-fondo-sobremi {
-  position: absolute;
-  right: -10px;
-  bottom: -20px;
-  font-size: 8rem;
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* TARJETAS DE SERVICIOS */
 .grid-servicios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .tarjeta-servicio {
@@ -235,101 +160,105 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
-}
-
-.tarjeta-servicio:hover {
-  transform: translateY(-5px);
-}
-
-.imagen-contenedor {
-  position: relative;
+  text-align: center;
 }
 
 .tarjeta-servicio img {
   width: 100%;
-  height: 230px;
+  height: 200px;
   object-fit: cover;
 }
 
-.badge-icono {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: var(--blanco);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
 .contenido-tarjeta {
-  padding: 1.8rem;
+  padding: 1.5rem;
 }
 
-.contenido-tarjeta h3 {
+.precio {
+  font-size: 1.1rem;
   color: var(--verde-botanico);
+  margin: 1rem 0;
+}
+
+/* ESTILOS DEL CARRITO */
+.caja-carrito {
+  background: var(--blanco);
+  border: 2px solid var(--verde-suave);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.caja-carrito h3 {
   margin-top: 0;
-  font-size: 1.4rem;
+  color: var(--verde-botanico);
 }
 
-.beneficio {
-  padding: 1.2rem;
-  border-radius: 12px;
-  margin-top: 1.2rem;
-  font-size: 0.93rem;
+.caja-carrito ul {
+  list-style: none;
+  padding: 0;
 }
 
-.beneficio-verde {
-  background-color: var(--verde-suave);
-  border-left: 4px solid var(--verde-botanico);
+.caja-carrito li {
+  padding: 0.5rem 0;
+  border-bottom: 1px border-dashed #eee;
 }
 
-.beneficio-rosa {
-  background-color: var(--rosa-suave);
-  border-left: 4px solid var(--rosa-armonia);
+.total-texto {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  color: var(--naranja-vital);
 }
 
-.beneficio ul {
-  padding-left: 1.2rem;
-  margin: 0.5rem 0 0 0;
+/* ESTILOS DEL FORMULARIO DE SALUD */
+.formulario {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--rosa-armonia);
 }
 
-/* CONTACTO Y FOOTER */
-.tarjeta-contacto {
-  background: linear-gradient(135deg, var(--naranja-suave) 0%, var(--rosa-suave) 100%);
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  text-align: center;
-  border: 1px solid rgba(224, 122, 95, 0.2);
+.campo {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background-color: var(--verde-botanico);
-  color: white;
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--verde-botanico);
+}
+
+.campo input, .campo select, .campo textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
   font-size: 0.95rem;
 }
 
-.copyright {
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-top: 5px;
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  outline: none;
+  border-color: var(--naranja-vital);
 }
 
-/* ADAPTACIÓN MÓVIL */
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--verde-botanico);
+  color: white;
+  margin-top: 3rem;
+}
+
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .header {
     flex-direction: column;
     gap: 0.8rem;
-  }
-  
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-  
-  .seccion {
-    padding: 2.5rem 1rem;
   }
 }
