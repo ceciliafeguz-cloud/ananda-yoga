@@ -27,9 +27,10 @@ body {
   line-height: 1.6;
 }
 
+/* Ancho fluido para abarcar bien la pantalla en PC y celular */
 .container {
   width: 90%;
-  max-width: 1050px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
@@ -46,7 +47,7 @@ body {
 .header {
   background-color: var(--blanco);
   border-bottom: 2px solid var(--rosa-cuarzo);
-  padding: 16px 0;
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -58,7 +59,7 @@ body {
   align-items: center;
 }
 
-.brand {
+.logo {
   display: flex;
   flex-direction: column;
 }
@@ -74,37 +75,34 @@ body {
 
 .logo-sub {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #dd6848;
   letter-spacing: 2px;
   margin-top: 2px;
 }
 
-.brand-sub {
-  font-size: 0.75rem;
-  color: var(--naranja-suave);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 3px;
-}
-
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--texto-suave);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* Hero Section (Estructura en 2 Columnas) */
+.nav-links a:hover {
+  color: var(--naranja-suave);
+}
+
+/* Hero Section (Estructura Full en 2 Columnas) */
 .hero {
-  padding: 60px 0;
+  padding: 70px 0;
   background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
   position: relative;
   overflow: hidden;
@@ -113,7 +111,7 @@ body {
 .hero-container {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -123,26 +121,26 @@ body {
 
 .tagline {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 2px;
   color: var(--verde-suave);
   font-weight: 600;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hero-text h2 {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 400;
-  line-height: 1.3;
-  margin-bottom: 15px;
+  line-height: 1.25;
+  margin-bottom: 20px;
 }
 
 .hero-text p {
   color: var(--texto-suave);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
 }
 
 /* Ilustraciones y Contenedor de Imagen */
@@ -156,12 +154,12 @@ body {
 
 .hero-img {
   width: 100%;
-  max-width: 420px;
-  height: 440px;
+  max-width: 500px;
+  height: 500px;
   object-fit: cover;
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 250px 250px 25px 25px;
   border: 4px solid var(--rosa-cuarzo);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 2;
 }
@@ -169,7 +167,7 @@ body {
 /* Ilustraciones Botánicas Decorativas */
 .hoja-decorativa {
   position: absolute;
-  font-size: 2.5rem;
+  font-size: 3rem;
   opacity: 0.35;
   z-index: 1;
   user-select: none;
@@ -177,13 +175,13 @@ body {
 
 .hoja-top {
   top: -10px;
-  right: 15px;
+  right: 20px;
   transform: rotate(15deg);
 }
 
 .hoja-bottom {
   bottom: -10px;
-  left: 15px;
+  left: 20px;
   transform: rotate(-20deg);
 }
 
@@ -192,29 +190,29 @@ body {
   background-color: var(--blanco);
   border: 1px solid var(--rosa-cuarzo);
   border-left: 5px solid var(--naranja-suave);
-  padding: 18px 22px;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-top: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
 }
 
 .anuncio-titulo {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
   color: var(--naranja-suave);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .anuncio-lista {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   padding-left: 20px;
   color: var(--texto-suave);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .anuncio-contacto {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--texto-oscuro);
 }
 
@@ -228,94 +226,98 @@ body {
   text-decoration: underline;
 }
 
-/* Botones */
+/* Botones Generales */
 .btn {
   display: inline-block;
   padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
   transition: background 0.3s;
 }
 
-.btn-primary {
-  background-color: var(--naranja-suave);
-  color: var(--blanco);
-}
-
-.btn-primary:hover {
-  background-color: var(--naranja-hover);
-}
-
 /* Beneficios */
 .beneficios-section {
-  padding: 70px 0;
+  padding: 90px 0;
 }
 
 .section-header {
   text-align: center;
-  max-width: 500px;
-  margin: 0 auto 40px;
+  max-width: 650px;
+  margin: 0 auto 50px;
 }
 
 .section-header h2 {
   font-family: var(--font-serif);
-  font-size: 1.9rem;
+  font-size: 2.3rem;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--texto-suave);
 }
 
 .grid-beneficios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
 }
 
 .card-beneficio {
   background: var(--blanco);
-  padding: 30px;
-  border-radius: 16px;
+  padding: 40px 30px;
+  border-radius: 18px;
   text-align: center;
-  border-top: 4px solid var(--verde-suave);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border-top: 5px solid var(--verde-suave);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
 }
 
 .icono-ilustracion {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
 .card-beneficio h3 {
   font-family: var(--font-serif);
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
   font-weight: 400;
+}
+
+.card-beneficio p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
 }
 
 /* Clases Section */
 .clases-section {
-  padding: 70px 0;
+  padding: 90px 0;
   background-color: var(--rosa-bg);
 }
 
 .grid-clases {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .card-clase {
   background: var(--blanco);
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--rosa-cuarzo);
 }
 
 .card-img-container {
-  height: 200px;
+  height: 230px;
 }
 
 .card-img-container img {
@@ -325,48 +327,56 @@ body {
 }
 
 .card-body {
-  padding: 25px;
+  padding: 30px;
 }
 
 .card-body h3 {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .desc-corta {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--texto-suave);
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .lista-beneficios {
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .lista-beneficios li {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--texto-oscuro);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .price-box {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .monto {
   font-family: Arial, sans-serif;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #e07a5f;
+}
+
+.periodo {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
 }
 
 .btn-card {
   background-color: var(--verde-suave);
   color: var(--blanco);
   width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
 }
 
 .btn-card:hover {
@@ -375,37 +385,44 @@ body {
 
 /* Ficha de Salud */
 .ficha-section {
-  padding: 70px 0;
+  padding: 90px 0;
 }
 
 .form-wrapper {
   background: var(--blanco);
-  padding: 35px;
-  border-radius: 20px;
-  max-width: 600px;
+  padding: 45px;
+  border-radius: 22px;
+  max-width: 650px;
   margin: 0 auto;
   border: 1px solid var(--rosa-cuarzo);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
 }
 
 .form-header {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .form-header h2 {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
 }
 
 .input-group {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  font-size: 0.85rem;
-  margin-bottom: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
   font-weight: 500;
 }
 
@@ -413,25 +430,31 @@ body {
 .input-group select,
 .input-group textarea {
   width: 100%;
-  padding: 11px;
+  padding: 13px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .btn-submit {
   background-color: var(--naranja-suave);
   color: white;
   width: 100%;
+  font-size: 1rem;
+  padding: 14px;
+}
+
+.btn-submit:hover {
+  background-color: var(--naranja-hover);
 }
 
 .status-msg {
   margin-top: 15px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   display: none;
 }
 
@@ -443,27 +466,27 @@ body {
 
 /* Frase Budista */
 .frase-section {
-  padding: 60px 0;
+  padding: 70px 0;
   background-color: var(--rosa-bg);
 }
 
 .ilustracion-flor {
-  font-size: 2.5rem;
+  font-size: 3rem;
   display: block;
   margin-bottom: 15px;
 }
 
 .frase-budista {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-style: italic;
   color: var(--texto-oscuro);
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto 10px;
 }
 
 .frase-autor {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--naranja-suave);
   font-weight: 500;
 }
@@ -473,36 +496,60 @@ body {
   background-color: var(--texto-oscuro);
   color: white;
   text-align: center;
-  padding: 30px 0;
+  padding: 35px 0;
 }
 
 .footer-title {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  margin-bottom: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
 }
 
 .footer-sub {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 
-/* Responsive para Celulares */
-@media (max-width: 768px) {
+/* Responsive Adaptable para Celulares y Tablets */
+@media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 35px;
   }
 
   .hero-text {
     text-align: center;
   }
 
-  .hero-img {
-    height: 320px;
+  .hero-text h2 {
+    font-size: 2.2rem;
   }
 
-  .hoja-decorativa {
-    font-size: 2rem;
+  .anuncio-fechas {
+    text-align: left;
+  }
+
+  .grid-clases {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-img {
+    height: 350px;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-wrapper {
+    padding: 25px 20px;
   }
 }
