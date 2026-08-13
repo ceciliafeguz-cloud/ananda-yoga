@@ -494,6 +494,22 @@ body {
 
 .anuncio-wa-link:hover {
     text-decoration: underline;
+}/* Estilos para hacer vistoso el logo Ananda Yoga */
+.logo-ananda {
+    display: block;
+    font-size: 1.8rem; /* Tamaño más grande y visible */
+    font-weight: 700;
+    color: #4a6b5d; /* Verde salvia elegante y naturista */
+    letter-spacing: 0.5px;
+    line-height: 1.1;
 }
 
+.logo-sub {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e07a5f; /* Terracota para mantener la armonía */
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
 }
