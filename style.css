@@ -106,43 +106,39 @@ body {
   background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
 }
 
+}/* Hero Section Centrada */
+.hero {
+  padding: 50px 0;
+  background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
+}
+
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  display: flex;
+  flex-direction: column; /* Apila el texto arriba y la imagen abajo */
+  align-items: center;    /* Centra todo horizontalmente */
+  text-align: center;      /* Centra los textos */
+  gap: 30px;
 }
 
-.tagline {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: var(--verde-suave);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
+.hero-text {
+  max-width: 750px; /* Limita el ancho del texto para que sea cómodo de leer */
+  margin: 0 auto;
 }
 
-.hero-text h2 {
-  font-family: var(--font-serif);
-  font-size: 2.1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  margin-bottom: 15px;
-}
-
-.hero-text p {
-  color: var(--texto-suave);
-  margin-bottom: 25px;
-  font-size: 0.95rem;
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 550px; /* Tamaño ideal para la imagen centrada */
+  display: flex;
+  justify-content: center;
 }
 
 .hero-img {
   width: 100%;
-  height: 360px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 180px 180px 20px 20px;
+  border-radius: 200px 200px 20px 20px; /* Mantiene la forma abovedada hermosa */
   border: 4px solid var(--rosa-cuarzo);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); /* Sombra suave elegancia */
 }
 
 /* Botones */
