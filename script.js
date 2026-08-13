@@ -12,30 +12,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-
-
-  
-
-// Enviar a WhatsApp Cecilia (3794691806)
-document.getElementById("btn-comprar-whatsapp").onclick = () => {
-  if (carrito.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
-
-  let texto = "Hola Cecilia, quiero inscribirme a las siguientes clases online:\n\n";
-  let total = 0;
-
-  carrito.forEach(item => {
-    texto += `• ${item.nombre}: $${item.precio.toLocaleString("es-AR")}\n`;
-    total += item.precio;
-  });
-
-  texto += `\n*Total a abonar:* $${total.toLocaleString("es-AR")}`;
-
-  window.open(`https://wa.me/5493794691806?text=${encodeURIComponent(texto)}`, "_blank");
-};
-
 // Guardar Ficha en Firebase Firestore
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form-salud");

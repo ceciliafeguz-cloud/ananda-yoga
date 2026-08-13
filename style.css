@@ -98,17 +98,7 @@ body {
   font-weight: 500;
 }
 
-.cart-btn {
-  background-color: var(--rosa-bg);
-  border: 1px solid var(--naranja-suave);
-  color: var(--naranja-suave);
-  padding: 7px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
+
 
 /* Hero Section */
 .hero {
@@ -304,54 +294,6 @@ body {
   background-color: var(--verde-hover);
 }
 
-/* Modal Carrito 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(3px);
-    z-index: 200;
-    justify-content: center;
-    align-items: center;
-}*/
-
-.modal-content {
-  background: var(--blanco);
-  padding: 30px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.cart-items-list {
-  margin: 20px 0;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-}
-
-.cart-total-box {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.btn-wa {
-  background-color: #25d366;
-  color: white;
-  width: 100%;
-}
-
 /* Ficha de Salud */
 .ficha-section {
   padding: 70px 0;
@@ -473,44 +415,43 @@ body {
   }
 
   /* Estilos para el cartel de próximas fechas */
-  .anuncio-fechas {
-    background-color: #fdf6f4;
-    border: 1px solid #e07a5f;
-    border-left: 5px solid #e07a5f;
-    padding: 15px 20px;
-    border-radius: 12px;
-    margin: 20px 0;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .anuncio-titulo {
-    margin: 0 0 8px 0;
-    font-weight: 600;
-    color: #e07a5f;
-    font-size: 0.95rem;
-  }
-
-  .anuncio-lista {
-    margin: 0 0 12px 0;
-    padding-left: 20px;
-    color: #5c6b64;
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .anuncio-contacto {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #2b3a33;
-  }
-
-  .anuncio-wa-link {
-    color: #25d366;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .anuncio-wa-link:hover {
-    text-decoration: underline;
-  }
+  /* Cartel Informativo Fechas */
+.anuncio-fechas {
+  background-color: var(--rosa-bg);
+  border: 1px solid var(--naranja-suave);
+  border-left: 5px solid var(--naranja-suave);
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin: 25px 0 15px 0;
 }
+
+.anuncio-titulo {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--naranja-suave);
+  font-size: 0.95rem;
+}
+
+.anuncio-lista {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.anuncio-contacto {
+  font-size: 0.85rem;
+  color: var(--texto-oscuro);
+}
+
+.anuncio-wa-link {
+  color: #25d366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.anuncio-wa-link:hover {
+  text-decoration: underline;
+}
+
