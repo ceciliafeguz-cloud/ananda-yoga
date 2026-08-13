@@ -58,7 +58,6 @@ body {
   flex-direction: column;
 }
 
-/* Nuevo estilo del logo */
 .logo-ananda {
   display: block;
   font-size: 1.8rem;
@@ -98,19 +97,23 @@ body {
   font-weight: 500;
 }
 
-
-
-/* Hero Section */
+/* Hero Section Centrada */
 .hero {
-  padding: 60px 0;
+  padding: 50px 0;
   background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.hero-text {
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .tagline {
@@ -137,12 +140,61 @@ body {
   font-size: 0.95rem;
 }
 
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
 .hero-img {
   width: 100%;
-  height: 360px;
+  height: 350px;
   object-fit: cover;
   border-radius: 180px 180px 20px 20px;
   border: 4px solid var(--rosa-cuarzo);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Cartel Informativo Fechas */
+.anuncio-fechas {
+  background-color: var(--rosa-bg);
+  border: 1px solid var(--naranja-suave);
+  border-left: 5px solid var(--naranja-suave);
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin: 25px 0 15px 0;
+  text-align: left;
+}
+
+.anuncio-titulo {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--naranja-suave);
+  font-size: 0.95rem;
+}
+
+.anuncio-lista {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.anuncio-contacto {
+  font-size: 0.85rem;
+  color: var(--texto-oscuro);
+}
+
+.anuncio-wa-link {
+  color: #25d366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.anuncio-wa-link:hover {
+  text-decoration: underline;
 }
 
 /* Botones */
@@ -274,15 +326,11 @@ body {
   text-align: center;
 }
 
-
 .monto {
   font-family: Arial, sans-serif;
-  /* Hace que el signo $ sea con 1 sola barra */
   font-weight: 700;
   color: #e07a5f;
-  /* Tu color terracota */
 }
-
 
 .btn-card {
   background-color: var(--verde-suave);
@@ -408,43 +456,9 @@ body {
   opacity: 0.8;
 }
 
+/* Responsive para celulares */
 @media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* Estilos para el cartel de próximas fechas */
-  
-
-  .anuncio-titulo {
-    margin: 0 0 8px 0;
-    font-weight: 600;
-    color: #e07a5f;
-    font-size: 0.95rem;
-  }
-
-  .anuncio-lista {
-    margin: 0 0 12px 0;
-    padding-left: 20px;
-    color: #5c6b64;
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .anuncio-contacto {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #2b3a33;
-  }
-
-  .anuncio-wa-link {
-    color: #25d366;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .anuncio-wa-link:hover {
-    text-decoration: underline;
+  .hero-img {
+    height: 280px;
   }
 }
