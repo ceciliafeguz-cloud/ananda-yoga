@@ -108,10 +108,10 @@ body {
   overflow: hidden;
 }
 
-.hero-container {
+..hero-container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
+  grid-template-columns: 1.2fr 0.8fr; /* Le da más ancho al texto y empuja la foto a la derecha */
+  gap: 40px;
   align-items: center;
 }
 
@@ -144,12 +144,11 @@ body {
 }
 
 /* Ilustraciones y Contenedor de Imagen */
-.hero-image-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Le da más ancho al texto y empuja la foto a la derecha */
+  gap: 40px;
   align-items: center;
-  padding: 20px;
 }
 
 .hero-img {
@@ -164,26 +163,6 @@ body {
   z-index: 2;
 }
 
-/* Ilustraciones Botánicas Decorativas */
-.hoja-decorativa {
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.35;
-  z-index: 1;
-  user-select: none;
-}
-
-.hoja-top {
-  top: -10px;
-  right: 20px;
-  transform: rotate(15deg);
-}
-
-.hoja-bottom {
-  bottom: -10px;
-  left: 20px;
-  transform: rotate(-20deg);
-}
 
 /* Cartel Informativo Fechas */
 .anuncio-fechas {
