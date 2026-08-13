@@ -99,13 +99,6 @@ body {
 }
 
 
-
-/* Hero Section */
-.hero {
-  padding: 60px 0;
-  background: linear-gradient(180deg, var(--blanco) 0%, var(--rosa-bg) 100%);
-}
-
 /* Hero Section Centrada */
 .hero {
   padding: 50px 0;
