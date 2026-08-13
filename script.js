@@ -12,48 +12,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Carrito
-let carrito = [];
 
-function agregarAlCarrito(nombre, precio) {
-  carrito.push({ nombre, precio });
-  actualizarUI();
-  alert(`¡Agregaste ${nombre} a tu carrito!`);
-}
 
-function actualizarUI() {
-  const contador = document.getElementById("carrito-contador");
-  const lista = document.getElementById("lista-carrito");
-  const totalText = document.getElementById("total-precio");
-
-  contador.textContent = carrito.length;
-
-  if (carrito.length === 0) {
-    lista.innerHTML = '<p class="empty-msg">El carrito está vacío.</p>';
-    totalText.textContent = "0";
-    return;
-  }
-
-  lista.innerHTML = "";
-  let total = 0;
-
-  carrito.forEach(item => {
-    total += item.precio;
-    lista.innerHTML += `
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:0.9rem;">
-        <span>${item.nombre}</span>
-        <strong>$${item.precio.toLocaleString("es-AR")}</strong>
-      </div>
-    `;
-  });
-
-  totalText.textContent = total.toLocaleString("es-AR");
-}
-
-// Modal Carrito
-const modal = document.getElementById("modal-carrito");
-document.getElementById("btn-carrito").onclick = () => modal.style.display = "flex";
-document.getElementById("cerrar-carrito").onclick = () => modal.style.display = "none";
+  
 
 // Enviar a WhatsApp Cecilia (3794691806)
 document.getElementById("btn-comprar-whatsapp").onclick = () => {
